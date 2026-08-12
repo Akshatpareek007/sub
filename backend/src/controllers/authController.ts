@@ -53,8 +53,9 @@ export const login = async (req: Request, res: Response) => {
     });
   } catch (error: any) {
     console.error('Login Error:', error);
-    return res.status(500).json({ success: false, error: 'Server error during login' });
+    return res.status(500).json({ success: false, error: error.message || 'Server error during login' });
   }
+
 };
 
 export const getMe = async (req: AuthRequest, res: Response) => {
