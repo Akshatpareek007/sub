@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Production output
+dist/
+
+# Environment file
+.env
+
+# SQLite local databases
+*.db
+*.db-journal
+prisma/*.db
+prisma/*.db-journal
+
+# Logs
+*.log
