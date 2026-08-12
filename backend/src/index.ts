@@ -63,6 +63,11 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Mini ERP + CRM Backend API listening on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Mini ERP + CRM Backend API listening on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
+
